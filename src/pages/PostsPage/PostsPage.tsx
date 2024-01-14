@@ -53,7 +53,8 @@ const PostsPage = (): JSX.Element => {
 
   return (
     <Container>
-      <Search submitHandler={handleSearch}/>
+      <Search submitHandler={handleSearch}
+              value={like}/>
       {data && data.map(post => (
         <Post key={post.id} {...post} />
       ))}

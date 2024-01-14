@@ -48,11 +48,12 @@ const SearchReset = styled.button`
 
 interface ISearchProps {
   submitHandler: (arg: string) => void;
+  value: string;
 }
 
-const Search: FC<ISearchProps> = ({submitHandler}): JSX.Element => {
+const Search: FC<ISearchProps> = ({submitHandler, value}): JSX.Element => {
 
-  const [val, setVal] = useState('');
+  const [val, setVal] = useState(value);
 
   const inputId = useId();
 
