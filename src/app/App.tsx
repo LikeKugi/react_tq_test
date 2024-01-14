@@ -1,19 +1,15 @@
-import { useEffect } from 'react';
-import { getData } from '@/services/query.services';
+import AppRouter from '@/routers/AppRouter';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
 
-  useEffect(() => {
-    const data = async () => {
-      console.log(await getData({endpoint: '/posts', page: 1, per_page: 10}))
-    }
-
-    data()
-  }, [])
-
   return (
     <>
-
+      <QueryClientProvider client={queryClient}>
+        <AppRouter />
+      </QueryClientProvider>
     </>
   )
 }

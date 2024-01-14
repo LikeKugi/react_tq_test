@@ -1,5 +1,5 @@
 export const enum RoutesPaths {
   INDEX = '/',
-  POST = '/post',
+  POST = '/:postId',
   NOT_FOUND = '*'
 }
