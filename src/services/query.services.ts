@@ -14,7 +14,7 @@ export const fetchData = async ({endpoint, page, per_page, queryString}: IGetDat
     queryParams.push(`_per_page=${per_page}`)
   }
   if (queryString) {
-    queryParams.push(`_embed=[body=${queryString}]`)
+    queryParams.push(`body_like=${queryString}`)
   }
 
   const result = await instance.get(`${endpoint}${queryParams.length ? '?'+queryParams.join('&'): ''}`)
